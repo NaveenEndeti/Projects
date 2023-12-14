@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MALARIA PARASITE DETECTION USING TRANSFER LEARNING</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron bg-primary">
+  <h2 style="background-color:rgb(26, 215, 215);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MALARIA PARASITE DETECTION USING TRANSFER LEARNING</h2><br>
+ 
+  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">          
+      <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+
+	{% if prediction %}
+  {% set another = imagefilename %}
+  <img src="{{url_for('static', filename='/images/' + another)}}" height="220px" width="220px">
+  <h2 style="color:rgb(5, 159, 179);"><i>{{prediction_Imagename}}</i></h2>
+	<h3 style="color:rgb(179, 75, 5);"> Your Prediction   : <i> {{prediction}} </i></h3>
+  <h3 style="color:rgb(5, 14, 179);"> Your Prediction   : <i> {{prediction1}} </i></h3>
+  <h3 style="color:rgb(5, 179, 43);"> Your Prediction   : <i> {{prediction2}} </i></h3>
+	{% endif %}
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
